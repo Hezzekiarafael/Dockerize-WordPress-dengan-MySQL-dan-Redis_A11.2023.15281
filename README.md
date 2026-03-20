@@ -39,14 +39,14 @@ Redis berhasil terhubung (status: Connected)
 Data tetap ada setelah container di-restart (volume berhasil)
 
 # Jawaban Pertanyaan
-1. Kenapa perlu volume untuk MySQL?
+1. Kenapa perlu volume untuk MySQL? :
 Volume digunakan agar data database tidak hilang ketika container dihentikan atau dihapus, sehingga data tetap persisten.
 
-2. Apa fungsi depends_on?
+2. Apa fungsi depends_on? :
 depends_on digunakan untuk mengatur urutan startup container, sehingga WordPress akan berjalan setelah MySQL siap digunakan.
 
-3. Bagaimana cara WordPress container connect ke MySQL?
+3. Bagaimana cara WordPress container connect ke MySQL? :
 WordPress menggunakan konfigurasi WORDPRESS_DB_HOST=mysql, dimana mysql adalah nama service di Docker Compose yang berfungsi sebagai hostname dalam network Docker.
 
-4. Apa keuntungan pakai Redis untuk WordPress?
+4. Apa keuntungan pakai Redis untuk WordPress? :
 Redis digunakan sebagai cache untuk mempercepat performa website, mengurangi beban database, dan meningkatkan kecepatan akses halaman.
