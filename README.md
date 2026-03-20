@@ -20,10 +20,10 @@ docker-compose up -d
 
 # Screenshoots
 1. WordPress Installation Page
-![WordPress Installation](screenshots/1_wordpress_installation.png)
+![WordPress Installation](screenshoots/1_wordpress_installation.png)
 
 2. Dashboard
-![Dashboard](screenshots/2_wordpress_dashboard.png)
+![Dashboard](screenshoots/2_wordpress_dashboard.png)
 
 # Testing & Verification
 
