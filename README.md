@@ -26,7 +26,7 @@ Project ini merupakan implementasi WordPress menggunakan Docker Compose dengan M
 ![Redis CLI Test (PING)](screenshoots/5_redis_ping.png)
 
 6. Redis Connected
-![Redis Connected](screenshoots/5_redis_connected.png)
+![Redis Connected](screenshoots/6_redis_connected.png)
 
 7. Data Persistence (Setelah Restart)
 ![Redis Connected](screenshoots/7_after_restart.png)
