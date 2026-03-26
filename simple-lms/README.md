@@ -1,27 +1,20 @@
 # Simple LMS - Django + Docker
+## Cara Menjalankan Project
 
-## 📌 Deskripsi Project
-
-Project ini adalah implementasi sederhana dari Learning Management System (LMS) menggunakan **Django** yang dijalankan dengan **Docker Compose** dan menggunakan **PostgreSQL** sebagai database.
-
----
-
-## 🚀 Cara Menjalankan Project
-
-### 1. Clone Repository
+## 1. Clone Repository
 
 ```bash
 git clone <URL_REPOSITORY_KAMU>
 cd simple-lms
 ```
 
-### 2. Jalankan Docker Compose
+## 2. Jalankan Docker Compose
 
 ```bash
 docker compose up --build
 ```
 
-### 3. Jalankan Migrasi Database
+## 3. Jalankan Migrasi Database
 
 Buka terminal baru:
 
@@ -30,7 +23,7 @@ docker exec -it django_app bash
 python manage.py migrate
 ```
 
-### 4. Akses Aplikasi
+## 4. Akses Aplikasi
 
 Buka browser:
 
@@ -40,7 +33,7 @@ http://127.0.0.1:8000
 
 ---
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 File `.env` digunakan untuk konfigurasi database:
 
@@ -54,33 +47,33 @@ DB_PORT=5432
 
 ---
 
-## 🐳 Docker Services
+## Docker Services
 
-### 1. Web (Django)
+## 1. Web (Django)
 
 * Menjalankan aplikasi Django
 * Port: 8000
 
-### 2. Database (PostgreSQL)
+## 2. Database (PostgreSQL)
 
 * Database utama aplikasi
 * Port: 5432
 
 ---
 
-## 🗄️ Konfigurasi Django
+## Konfigurasi Django
 
 ### Database Connection
 
 Django terhubung ke PostgreSQL menggunakan konfigurasi di `settings.py` melalui environment variables.
 
-### Static Files
+## Static Files
 
 Static files dikelola oleh Django dan dapat dikembangkan lebih lanjut menggunakan `collectstatic`.
 
 ---
 
-## 📁 Struktur Project
+## Struktur Project
 
 ```
 simple-lms/
@@ -98,45 +91,24 @@ simple-lms/
 
 ---
 
-## 📸 Screenshot
+## Screenshot
 
-### Django Welcome Page
+## Django Welcome Page
 
-(Tambahkan screenshot di sini)
-
-Contoh:
-
-```md
 ![Django](screenshots/django.png)
-```
 
----
 
 ## Jawaban Pertanyaan
 
-### 1. Kenapa perlu volume untuk PostgreSQL?
-
+## 1. Kenapa perlu volume untuk PostgreSQL?
 Volume digunakan agar data database tetap tersimpan walaupun container dihentikan atau dihapus.
 
-### 2. Apa fungsi depends_on?
+## 2. Apa fungsi depends_on?
 
 `depends_on` digunakan untuk memastikan service database berjalan terlebih dahulu sebelum service web dijalankan.
 
-### 3. Bagaimana Django connect ke PostgreSQL?
+## 3. Bagaimana Django connect ke PostgreSQL?
 
 Django menggunakan konfigurasi di `settings.py` dengan bantuan environment variables seperti `DB_HOST`, `DB_NAME`, `DB_USER`, dan `DB_PASSWORD`.
 
 ---
-
-## 📤 Submission
-
-* Source code diupload ke GitHub/GitLab
-* Link repository dikumpulkan melalui KULINO
-
----
-
-## ✅ Status
-
-* Docker Compose: ✅ Running
-* Django App: ✅ Accessible
-* PostgreSQL: ✅ Connected
