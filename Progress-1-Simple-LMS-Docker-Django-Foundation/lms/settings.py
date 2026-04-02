@@ -24,7 +24,6 @@ SECRET_KEY = 'django-insecure-p+_pi38agj$q&!p7vwhzjl+zypl^6c-!ul2x8$e$j^h1d7!z)m
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'courses',
 ]
 
 MIDDLEWARE = [
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'config.urls'
+ROOT_URLCONF = 'lms.urls'
 
 TEMPLATES = [
     {
@@ -66,7 +66,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'lms.wsgi.application'
 
 
 # Database
@@ -74,11 +74,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'lms_db',
+        'USER': 'lms_user',         # Coba kembalikan ke sini
+        'PASSWORD': 'lms_pass',     # Coba kembalikan ke sini
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -118,15 +121,8 @@ STATIC_URL = 'static/'
 
 import os
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
-    }
-}
+
+
 
 ALLOWED_HOSTS = ['*']
+AUTH_USER_MODEL = 'courses.User'
