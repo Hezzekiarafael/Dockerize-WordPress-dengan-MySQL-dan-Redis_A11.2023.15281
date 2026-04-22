@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ninja_extra',  # TAMBAHKAN INI
     'courses',
 ]
 
@@ -76,9 +77,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'lms_db',
-        'USER': 'lms_user',         # Coba kembalikan ke sini
-        'PASSWORD': 'lms_pass',     # Coba kembalikan ke sini
-        'HOST': '127.0.0.1',
+        'USER': 'lms_user',
+        'PASSWORD': 'lms_pass',
+        'HOST': 'db',  # GANTI dari 127.0.0.1 menjadi db
         'PORT': '5432',
     }
 }
